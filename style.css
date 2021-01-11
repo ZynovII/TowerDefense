@@ -1,0 +1,239 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+h1{
+  margin: 0;
+}
+.field {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.fieldUp {
+  height: 22%;
+  background-image: url(img/field_grace.svg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateZ(0);
+}
+.fieldMiddle {
+  height: 25%;
+  background-image: url(img/field_sand.svg);
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.fieldDown {
+  height: 33%;
+  background-image: url(img/field_grace.svg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(0);
+}
+.wall {
+  height: 10%;
+  background-color: gray;
+}
+.start-button {
+  text-align: center;
+  padding: 0 10px;
+  font-size: 2.5em;
+  font-family: 'Goldman', cursive;
+  color: white;
+  border-radius: 40px;
+  border: 7px solid white;  
+  background-color: rgba(7, 145, 7, 0.7);
+  cursor: pointer;
+  margin: 5px 5px;
+  touch-action: none;
+}
+.start-button:hover {
+  box-shadow: 0 0 5px 5px gainsboro;
+}
+.score {
+  background-image: url(/img/coin.svg);
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 40px;
+  background-color: rgba(7, 145, 7, 0.7);
+  width: 100px;
+  padding-left: 65px;
+  padding-right: 20px;
+  font-size: 2.5em;
+  font-family: 'Goldman', cursive;
+  color: white;
+  border-radius: 40px;
+  border: 7px solid gold;
+  margin-right: 10px;
+}
+.level {
+  background-color: rgba(7, 145, 7, 0.7);
+  padding: 0 10px;
+  font-size: 2.5em;
+  font-family: 'Goldman', cursive;
+  color: white;
+  border-radius: 40px;
+  border: 7px solid rgb(43, 255, 149);
+}
+.tower-menu {
+  padding: 5px;
+  border-radius: 40px;
+  border: 5px solid white;
+  background-color: rgba(7, 145, 7, 0.7);
+  display: flex;
+  justify-content: space-around;
+}
+.tower-menu div {
+  padding: 0 20px;
+  width: 20%;
+  color: gold;
+  font-family: 'Goldman', cursive;
+  text-align: center;
+}
+img {
+  width: 50px;
+}
+.tower-menu img:hover {
+  transform: scale(1.1);
+}
+.tower-cell {
+  border-radius: 50%;
+  border: 7px double rgba(146, 212, 221, 0.721);
+  box-sizing: border-box;
+  position: absolute;
+}
+.blue-tower {
+  height: 50px;
+  width: 50px;
+  background: url(img/blue_canon.svg);
+  position: absolute;
+}
+.green-tower {
+  height: 50px;
+  width: 50px;
+  background: url(img/green_canon.svg);
+  position: absolute;
+}
+.peremen-tower {
+  height: 50px;
+  width: 50px;
+  background: url(img/peremen_canon.svg);
+  position: absolute;
+}
+.enemy {
+  position: absolute;
+  transform: translateZ(0);
+}
+.enemy svg {
+  animation: walking 0.5s infinite linear alternate;
+}
+.big-enemy {
+  border-radius: 45%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+.enemy-freezed {
+  background-color: rgb(91, 209, 255);
+}
+.freezer {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(40, 180, 255);
+}
+.super-bullet {
+  box-sizing: border-box;
+  border: 4px white dotted;
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(248, 62, 62);
+}
+.bullet {
+  position: absolute;
+  border-radius: 50%;
+  background: #555;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  height:150px;
+  background-color: white;
+  margin:0px auto;
+  padding:10px;
+  font-size: 2em;
+  border-radius: 10px; 
+}
+.layout{
+  width:100%;
+  min-height:100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow:hidden;
+  position:fixed;
+  top:0px;
+  z-index: 10;
+}
+.login-menu{
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Goldman', cursive;
+  color: rgb(48, 73, 53);
+  margin: 10px auto 0px auto;
+  width:50%;
+  padding:10px;
+  background-color: rgb(238, 238, 238);
+  border-radius:5px;
+  box-shadow: 0px 0px 10px #000;
+  transition: 1s ease;
+  transform: translateZ(0);
+}
+.user-name-input {
+  box-sizing: border-box;
+  width:100%;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:0px 0px 5px 5px rgba(0,0,0,0.08);
+}
+.btn-submit {
+  margin: 30px;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: rgb(12, 187, 41);
+  color: #fff;
+  padding: 16px 16px;
+  font-size: 16px;
+  box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+}
+.invalid {
+  border: 3px solid red;
+}
+.record-table {
+  background-color: rgba(7, 145, 7, 0.7);
+  border-radius: 10px;
+}
+.record-table-head {
+  display: flex;
+  justify-content: space-between;
+}
+.table-row {
+  display: flex;
+  justify-content: space-between;
+}
+.table-cell {
+  box-sizing: border-box;
+  margin: 5px 15px;
+}
+@keyframes walking {
+  from { 
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
