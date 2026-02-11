@@ -33,8 +33,18 @@ The project follows an **MVC pattern** with paired Model/View files per game ent
 - **Game loop**: `setInterval` at 16ms (~60 FPS) in `ModelGame.start()` — each frame moves enemies, fires towers, updates projectiles
 - **Tower drag-and-drop**: Pointer events (`pointerdown`/`pointermove`/`pointerup`) on tower palette; towers are placed onto cells
 - **Naming**: Models use `Model[Entity]`, Views use `View[Entity]`, classes are PascalCase, private vars prefixed with `_`
-- **Mixed class styles**: Function constructors (Models) alongside ES6 classes (Views, Shells)
+- **Mixed class styles**: Function constructors (`ModelGame`, `ModelEnemy`, `AJAXStorage`) alongside ES6 classes (`Tower`/subtypes, Views, Shells, `ControllerGame`)
 - **Grid unit**: `block = 50` pixels used throughout for positioning
+- **No modules**: All JS files are loaded via `<script>` tags in `index.html`. Load order matters — dependencies must come before dependents (e.g., `ViewTowerCell.js` before `ModelTowerCell.js`, `Shells.js` before `script.js`)
+- **Entry point**: `js/script.js` — instantiates the three top-level objects (`ModelGame`, `ViewGame`, `ControllerGame`) and wires them together
+
+## Game Balance Constants
+
+- **Tower costs**: Green (damage) = 100, Blue (freezer) = 200, White (destroyer) = 500
+- **Enemy damage**: Bullet = 25 HP, Freezer = 10 HP + slow, Destroyer = 100 HP (instant kill)
+- **Score**: +25 per kill, −50 per enemy reaching the end; starting score = 100
+- **Levels** are defined in `ModelGame.levels[]` array — each level specifies `units`, `cells`, `unitsSpeed`, `unitsHP`, `frequency`
+- **Tower fire rate**: Every 1100ms (68 game ticks at 16ms interval)
 
 ## External Dependencies
 
